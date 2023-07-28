@@ -2,8 +2,34 @@ const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
 
 const themeSchema = new mongoose.Schema({
-    themeName: { type: String, required: true, minlength: [2, 'Name of theme must be at least 2 characters long'] },
-
+    title: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    img: {
+        type: String,
+        required: true
+    },
+    time: {
+        type:Number,
+        required: true
+    },
+    ingredients: {
+        type: String,
+        required: true
+    },
+    text: {
+        type:String,
+        required: true
+    },
+    subscribers: [{
+        type: ObjectId,
+        ref: "User"
+    }],
     userId: {
         type: ObjectId,
         ref: "User"

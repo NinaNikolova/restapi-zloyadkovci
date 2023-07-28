@@ -5,19 +5,17 @@ const saltRounds = Number(process.env.SALTROUNDS) || 5;
 const { ObjectId } = mongoose.Schema.Types;
 
 const userSchema = new mongoose.Schema({
-  
-    email: {
+      email: {
         type: String,
         required: true,
         unique: true,
-        minlength: [10, 'Email should be at least 10 characters'],
     },
     username: {
         type: String,
         required: true,
         unique: true,
-        minlength: [3, 'Username should be at least 3 characters'],
-        
+        minlength: [2, 'Username should be at least 2 characters'],
+      
     },
     password: {
         type: String,

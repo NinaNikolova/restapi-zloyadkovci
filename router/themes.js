@@ -9,9 +9,9 @@ router.get('/', themeController.getThemes);
 router.post('/', auth(), themeController.createTheme);
 
 router.get('/:themeId', themeController.getTheme);
-router.post('/:themeId', auth(), postController.createPost);
-router.put('/:themeId/posts/:postId', auth(), postController.editPost);
-router.delete('/:themeId/posts/:postId', auth(), postController.deletePost);
+router.post('/:themeId', postController.createPost);
+router.put('/:themeId/posts/:postId', postController.editPost);
+router.delete('/:themeId/posts/:postId', postController.deletePost);
 
 
 
